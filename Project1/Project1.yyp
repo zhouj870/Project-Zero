@@ -34,6 +34,7 @@
   },
   "name":"Project1",
   "resources":[
+    {"id":{"name":"test_obj","path":"objects/test_obj/test_obj.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "resourceType":"GMProject",
