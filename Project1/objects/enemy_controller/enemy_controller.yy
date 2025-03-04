@@ -1,18 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_enemy1",
+  "%Name":"enemy_controller",
   "eventList":[],
   "managed":true,
-  "name":"obj_enemy1",
+  "name":"enemy_controller",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":{
-    "name":"enemy_controller",
-    "path":"objects/enemy_controller/enemy_controller.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
