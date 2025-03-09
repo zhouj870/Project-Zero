@@ -50,6 +50,7 @@
     {"id":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"id":{"name":"spr_button","path":"sprites/spr_button/spr_button.yy",},},
+    {"id":{"name":"spr_enemy1","path":"sprites/spr_enemy1/spr_enemy1.yy",},},
     {"id":{"name":"spr_player_crouch","path":"sprites/spr_player_crouch/spr_player_crouch.yy",},},
     {"id":{"name":"spr_player_death","path":"sprites/spr_player_death/spr_player_death.yy",},},
     {"id":{"name":"spr_player_fall","path":"sprites/spr_player_fall/spr_player_fall.yy",},},
