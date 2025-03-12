@@ -1,5 +1,13 @@
-move_speed = 1
+//moving
+xspd = 0;
+yspd = 0;
+move_speed = 2.5;
+moveDir = 0;
 
-tilemap = layer_tilemap_get_id("Tiles_Col")
 
-gravity_direction = 270;
+
+
+//jumping
+grav = .275;
+termVal = 2;
+jspd = -10.15;

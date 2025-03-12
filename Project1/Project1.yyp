@@ -46,9 +46,11 @@
     {"id":{"name":"obj_enemy2","path":"objects/obj_enemy2/obj_enemy2.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"obj_sword","path":"objects/obj_sword/obj_sword.yy",},},
+    {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"test_obj","path":"objects/test_obj/test_obj.yy",},},
     {"id":{"name":"rm_entrance","path":"rooms/rm_entrance/rm_entrance.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
+    {"id":{"name":"rm_testing","path":"rooms/rm_testing/rm_testing.yy",},},
     {"id":{"name":"spr_block","path":"sprites/spr_block/spr_block.yy",},},
     {"id":{"name":"spr_button","path":"sprites/spr_button/spr_button.yy",},},
     {"id":{"name":"spr_dungeon_wall_four","path":"sprites/spr_dungeon_wall_four/spr_dungeon_wall_four.yy",},},
@@ -64,6 +66,7 @@
     {"id":{"name":"spr_player_walk","path":"sprites/spr_player_walk/spr_player_walk.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"spr_run","path":"sprites/spr_run/spr_run.yy",},},
+    {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
     {"id":{"name":"dungeon_tile_four","path":"tilesets/dungeon_tile_four/dungeon_tile_four.yy",},},
     {"id":{"name":"dungeon_tile_one","path":"tilesets/dungeon_tile_one/dungeon_tile_one.yy",},},
     {"id":{"name":"dungeon_tile_three","path":"tilesets/dungeon_tile_three/dungeon_tile_three.yy",},},
@@ -74,6 +77,7 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"roomId":{"name":"rm_entrance","path":"rooms/rm_entrance/rm_entrance.yy",},},
+    {"roomId":{"name":"rm_testing","path":"rooms/rm_testing/rm_testing.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
