@@ -5,15 +5,13 @@
 
 //X  Movement
 //Direction
-getControls();
+rightKey = keyboard_check(vk_right);
+leftKey = keyboard_check(vk_left);
+jumpKeyPressed = keyboard_check_pressed(vk_space);
 
 moveDir = rightKey - leftKey;
 
-//Get my face
-if moveDir != 0 {face = moveDir};
-
-runType = runKey;
-xspd = moveDir * move_speed[runType];
+xspd = moveDir * move_speed;
 
 var _subPixel = 0.5;
 
@@ -29,27 +27,14 @@ x += xspd;
 
 //Y movement
 
-yspd += grav;
-
-if onGround 
-{
-	jumpCount = 0;
-} else {
-	if jumpCount == 0 {jumpCount = 1;}
-}
-
+yspd = grav; 
 
 //cap Falling speed
 if yspd > termVal {yspd = termVal};
 
 //Jump
-if jumpKeyPressed && onGround
+if jumpKeyPressed && place_meeting(x, y+1, obj_wall)
 {
-	//reset buffer
-	jumpKeyBuffered = false;
-	jumpKeyBufferTimer = 0;
-	
-	//set yspd to jump speed 
 	yspd = jspd;
 }
 
@@ -60,31 +45,30 @@ if place_meeting(x, y + yspd, obj_wall)
 	yspd = 0;
 }
 
-//set if I'm on the ground
-
-if yspd >= 0 && place_meeting(x,y+1,obj_wall)
-{
-	onGround = true;
-} else {
-	onGround = false;
-}
-
 y += yspd; 
 
-//Sprite Control
-if abs(xspd) > 0 {sprite_index = walkSpr};
-//Running
-if abs(xspd) >= move_speed[1] {sprite_index = runSpr};
-//Not moving
-if xspd == 0 {sprite_index = idleSpr};
-//In the air
-if !onGround {sprite_index = jumpSpr};
+if (keyboard_check(ord("A")) and !instance_place(x-move_speed, y, obj_block)) {
+		x += -move_speed
+		image_xscale = -2
+	}
 
-	mask_index = idleSpr;
+	if (keyboard_check(ord("D")) and !instance_place(x+move_speed, y, obj_block)) {
+		x += move_speed
+		image_xscale = 2
+	}
 
+	if (keyboard_check(ord("W"))) {
+		show_debug_message("jumping...")
+		if (instance_place(x,y+1,obj_block)) {
+			vspeed = jump_height
+		}
+	}
 
-
-
+	if (place_meeting(x, y+1, obj_block)) {
+		gravity = 0
+	} else {
+		gravity = 0.25;
+	}
 
 
 
