@@ -1,8 +1,8 @@
 //Controls setup
 controlsSetup();
-
+health = 100;
 //Sprites
-
+invincible_timer = 0;
 idleSpr = spr_player;
 walkSpr = spr_player_walk;
 runSpr = spr_run;
@@ -16,7 +16,6 @@ yspd = 0;
 move_speed[0] = 2.5;
 move_speed[1] = 4;
 moveDir = 0;
-
 
 
 
