@@ -8,7 +8,7 @@
     "TileSerialiseData":[],
   },
   "name":"dungeon_tile_three",
-  "out_columns":8,
+  "out_columns":3,
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
@@ -18,8 +18,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"spr_dungeon_wall_three",
-    "path":"sprites/spr_dungeon_wall_three/spr_dungeon_wall_three.yy",
+    "name":"spr_maze_door",
+    "path":"sprites/spr_maze_door/spr_maze_door.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{
@@ -34,5 +34,5 @@
   "tileWidth":16,
   "tilexoff":0,
   "tileyoff":0,
-  "tile_count":60,
+  "tile_count":12,
 }

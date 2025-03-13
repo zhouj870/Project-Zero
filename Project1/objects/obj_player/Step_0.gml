@@ -1,9 +1,7 @@
 // Direction
 getControls();
 
-// WASD and Arrow Key Movement
-var rightKey = keyboard_check(vk_right) || keyboard_check(ord("D"));
-var leftKey = keyboard_check(vk_left) || keyboard_check(ord("A"));
+// Controls in the script I made
 moveDir = rightKey - leftKey;
 
 // Get my face
@@ -35,8 +33,8 @@ if (onGround) {
 if (yspd > termVal) { yspd = termVal; }
 
 // Jump (Only Space Key)
-if (keyboard_check_pressed(vk_space) && onGround) {
-    yspd = -jspd; // Ensure jump speed is negative to go up
+if (jumpKeyPressed && onGround) {
+    yspd = jspd; // Ensure jump speed is negative to go up
     onGround = false;
 }
 
