@@ -45,3 +45,4 @@ if (player != noone && instance_exists(player)) {
         attack_cooldown = attack_delay;
     }
 }
+}
