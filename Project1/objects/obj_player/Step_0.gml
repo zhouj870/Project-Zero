@@ -1,6 +1,8 @@
 //Direction
 getControls()
 
+var rightKey = keyboard_check(vk_right) || keyboard_check(ord("D"));
+var leftKey = keyboard_check(vk_left) || keyboard_check(ord("A"));
 moveDir = rightKey - leftKey;
 
 
@@ -37,11 +39,10 @@ if onGround
 if yspd > termVal {yspd = termVal};
 
 //Jump
-if jumpKeyPressed && onGround
-{
-	yspd = jspd;
+if (keyboard_check_pressed(vk_space) && onGround) {
+    yspd = -jspd;
+    onGround = false;
 }
-
 //Y Collision
 
 if place_meeting(x, y + yspd, obj_wall)
