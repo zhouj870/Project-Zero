@@ -77,9 +77,11 @@ if (keyboard_check_pressed(ord("Z")) || mouse_check_button_pressed(mb_left)){
 		attack_timer = attack_duration;
 		sprite_index = spr_player_fight;
 		
-		var attack_offset = 50;
-		var attack_x = x + (face * attack_offset);
-		var attack_y = y;
+		var attack_offset_x = face * 40; // Move hitbox forward based on facing direction
+		var attack_offset_y = 10; // Adjust vertically to match the enemy height
+
+		var attack_x = x + attack_offset_x;
+		var attack_y = y + attack_offset_y; 
 		var hitbox = instance_create_layer(attack_x, attack_y, layer, obj_attack);
 		hitbox.direction = face;
 		
