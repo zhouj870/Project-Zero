@@ -1,3 +1,13 @@
+//Controls setup
+controlsSetup();
+
+//Sprites
+
+idleSpr = spr_player;
+walkSpr = spr_player_walk;
+runSpr = spr_run;
+jumpSpr = spr_player_jump;
+
 //moving
 face = 1;
 runType = 0;
@@ -12,5 +22,11 @@ moveDir = 0;
 
 //jumping
 grav = .275;
-termVal = 2;
-jspd = -10.15;
+termVal = 4;
+jspd = -6.15;
+jumpMax = 1;
+jumpCount = 0;
+jumpHoldTimer = 0;
+jumpHoldFrame = 18;
+onGround = true;
+
