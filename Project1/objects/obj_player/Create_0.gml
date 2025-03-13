@@ -1,6 +1,7 @@
 //Controls setup
 controlsSetup();
 health = 100;
+max_health = 100;
 //Sprites
 invincible_timer = 0;
 idleSpr = spr_player;
