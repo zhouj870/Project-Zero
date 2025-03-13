@@ -70,3 +70,30 @@ if (xspd == 0) { sprite_index = idleSpr; }
 if (!onGround) { sprite_index = jumpSpr; }
 
 mask_index = idleSpr;
+
+if (keyboard_check_pressed(ord("Z")) || mouse_check_button_pressed(mb_left)){
+	if(!is_attacking) {
+		is_attacking = true;
+		attack_timer = attack_duration;
+		sprite_index = spr_player_fight;
+		
+		var attack_offset = 50;
+		var attack_x = x + (face * attack_offset);
+		var attack_y = y;
+		var hitbox = instance_create_layer(attack_x, attack_y, layer, obj_attack);
+		hitbox.direction = face;
+		
+		show_debug_message("Hitbox created at X: " + string(attack_x) + "Y: " + string(attack_y));
+}
+}
+
+if(is_attacking){
+	attack_timer -= 1;
+	if(attack_timer <= 0) {
+		is_attacking = false;
+		sprite_index = spr_player;
+	}
+	
+}
+
+

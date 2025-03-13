@@ -30,3 +30,8 @@ jumpHoldTimer = 0;
 jumpHoldFrame = 18;
 onGround = true;
 
+//Attack system
+is_attacking = false; 
+attack_timer = 0;
+attack_duration = 8;
+attack_damage = 35;
