@@ -60,6 +60,36 @@ if (place_meeting(x, y + 1, obj_wall)) {
     onGround = false;
 }
 
+if (keyboard_check_pressed(cheat_invincible_key)) {
+    cheat_invincible = !cheat_invincible;
+    show_debug_message("Invincibility Cheat: " + string(cheat_invincible));
+
+    if (!cheat_invincible) {
+        invincible_timer = 0; // Reset invincibility when cheat is turned off
+    }
+}
+
+if (cheat_invincible) {
+    invincible_timer = 9999999;
+} else {
+    if (invincible_timer > 0) {
+        invincible_timer -= 1;
+    }
+}
+
+
+if (keyboard_check_pressed(cheat_full_health_key)) {
+    self.health = 100;
+    show_debug_message("Full Health Cheat Activated! Health: " + string(health));
+}
+
+if (cheat_invincible) {
+    invincible_timer = 9999999;
+} else {
+    if (invincible_timer > 0) {
+        invincible_timer -= 1;
+    }
+}
 
 
 //i frames to stop rapid hp loss
@@ -98,6 +128,7 @@ if (keyboard_check_pressed(ord("Z")) || mouse_check_button_pressed(mb_left)){
 		show_debug_message("Hitbox created at X: " + string(attack_x) + "Y: " + string(attack_y));
 }
 }
+
 
 if(is_attacking){
 	attack_timer -= 1;

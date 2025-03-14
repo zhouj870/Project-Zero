@@ -43,3 +43,8 @@ is_attacking = false;
 attack_timer = 0;
 attack_duration = 8;
 attack_damage = 35;
+
+//Cheats
+cheat_invincible = false; 
+cheat_full_health_key = ord("H");
+cheat_invincible_key = ord("I");
