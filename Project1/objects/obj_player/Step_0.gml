@@ -66,7 +66,7 @@ if (place_meeting(x, y + 1, obj_wall)) {
 
 if (invincible_timer > 0) {
     invincible_timer -= 1;
-    show_debug_message("🛡️ Player is invincible! Time left: " + string(invincible_timer));
+    
 }
 
 
