@@ -1,6 +1,6 @@
 if (invincible_timer <= 0) { 
 	health -= other.damage;
-    invincible_timer = 100; 
+    invincible_timer = 75; 
 	
 }
 /*

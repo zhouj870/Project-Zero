@@ -10,7 +10,7 @@ with (obj_enemy1) {
         // Reduce enemy health
         enemy_health -= 20;
 
-       
+       show_debug_message("enemy taking damage");
         // If enemy dies, destroy it
         if (enemy_health <= 0) {
            

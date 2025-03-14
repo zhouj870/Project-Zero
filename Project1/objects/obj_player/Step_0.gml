@@ -67,8 +67,8 @@ if (place_meeting(x, y + 1, obj_wall)) {
 if (invincible_timer > 0) {
     invincible_timer -= 1;
     
-}
 
+}
 
 // Sprite Control
 if (abs(xspd) > 0) { sprite_index = walkSpr; }
@@ -87,8 +87,8 @@ if (keyboard_check_pressed(ord("Z")) || mouse_check_button_pressed(mb_left)){
 		attack_timer = attack_duration;
 		sprite_index = spr_player_fight;
 		
-		var attack_offset_x = face * 40; // Move hitbox forward based on facing direction
-		var attack_offset_y = 10; // Adjust vertically to match the enemy height
+		var attack_offset_x = face * 10; // Move hitbox forward based on facing direction
+		var attack_offset_y = 5; // Adjust vertically to match the enemy height
 
 		var attack_x = x + attack_offset_x;
 		var attack_y = y + attack_offset_y; 
