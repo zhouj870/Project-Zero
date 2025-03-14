@@ -1,25 +1,25 @@
-if (other.invincible_timer <= 0 && attack_cooldown <= 0) { // ✅ Ensure cooldown applies
-    other.health -= damage;
-    attack_cooldown = attack_delay; // 🛑 **Set attack cooldown so enemy must wait**
+show_debug_message(" Collision detected with " + object_get_name(other.object_index) + " (ID: " + string(other.object_index) + ")");
 
-    show_debug_message("💥 Enemy " + string(id) + " hit the player! Cooldown started.");
+if (instance_exists(other) && other.object_index == obj_player) {  
+    show_debug_message(" Collision confirmed with obj_player!");
 
-    // ⏳ Set invincibility time for the player to prevent rapid damage spam
-    other.invincible_timer = 100; // 👈 **Player gets 1.6 seconds of invincibility after getting hit**
+    if (!is_undefined(other.health)) {  // Ensure `health` exists before modifying it
+        show_debug_message("obj_player's health exists. Current Health: " + string(other.health));
 
-    // Player counterattack logic (if attacking)
-    if (other.is_attacking) {
-        var attack_range = 20;
-        var attack_x = other.x + (other.face * attack_range);
+        if (other.invincible_timer <= 0) { // Prevents rapid hits
+            other.health -= damage; 
+            other.invincible_timer = 75; //  75 frames (1.25 sec) of invincibility
 
-        if (point_in_rectangle(attack_x, other.y, x - 10, y - 10, x + 10, y + 10)) {
-            health -= other.attack_damage;
-            show_debug_message("🗡️ Player hit enemy! Enemy Health: " + string(health));
+            show_debug_message("Enemy " + string(id) + " hit the player! New Health: " + string(other.health));
 
-            if (health <= 0) {
-                show_debug_message("☠️ Enemy " + string(id) + " defeated!");
-                instance_destroy();
-            }
+            //  Apply enemy attack cooldown
+            attack_cooldown = attack_delay;
+        } else {
+            show_debug_message(" Player is invincible, no damage applied.");
         }
+    } else {
+        show_debug_message(" ERROR: `health` is undefined in obj_player during collision!");
     }
+} else {
+    show_debug_message(" ERROR: Collision event triggered but `other` is NOT obj_player!");
 }

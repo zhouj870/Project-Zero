@@ -4,7 +4,7 @@ target_y = y
 alarm[0] = 60
 attack_range = 20;
 attack_cooldown = 0;
-attack_delay = 190;
+attack_delay = 60;
 tilemap = layer_tilemap_get_id("Tiles_Col")
 
 move_speed = 2;

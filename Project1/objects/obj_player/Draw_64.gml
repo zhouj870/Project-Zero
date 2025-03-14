@@ -6,7 +6,7 @@ var bar_height = 20;
 var bar_border = 2; 
 
 //Filled part of bar
-var health_percent = health / max_health;
+var health_percent = self.health / max_health;
 var bar_fill = bar_width * health_percent;
 
 //Border

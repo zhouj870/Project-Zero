@@ -1,6 +1,14 @@
+if (!variable_instance_exists(id, "health")) {
+    health = 100; // Default value if missing
+    show_debug_message("WARNING: Player health was missing. Setting to 100.");
+} else {
+    show_debug_message("Player health initialized correctly.");
+}
+
+
 //Controls setup
 controlsSetup();
-health = 100;
+self.health = 100; 
 max_health = 100;
 //Sprites
 invincible_timer = 0;
