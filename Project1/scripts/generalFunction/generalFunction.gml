@@ -16,7 +16,7 @@ function getControls()
 		runKey = clamp(runKey, 0, 1);
 	
 	//Action Input
-	jumpKeyPressed = keyboard_check_pressed(vk_space);
+	jumpKeyPressed = keyboard_check_pressed(vk_space) + keyboard_check_pressed(vk_up);
 	
 	jumpKey = keyboard_check(vk_space);
 		jumpKey = clamp(jumpKey, 0, 1);

@@ -7,8 +7,7 @@ moveDir = rightKey - leftKey;
 // Get my face
 if (moveDir != 0) { face = moveDir; }
 
-var runKey = keyboard_check(vk_shift);
-runType = runKey ? 1 : 0;
+runType = runKey;
 xspd = moveDir * move_speed[runType];
 
 var _subPixel = 0.5;
@@ -23,19 +22,27 @@ if (!place_meeting(x + xspd, y, obj_wall)) {
 // Y Movement
 yspd += grav;
 
+//reset jump count
 if (onGround) {
     jumpCount = 0;
 } else {
-    if (jumpCount == 0) { jumpCount = 1; }
+    if (jumpCount == 0) { jumpCount = 1; };
 }
 
 // Cap Falling Speed
 if (yspd > termVal) { yspd = termVal; }
 
 // Jump (Only Space Key)
-if (jumpKeyPressed && onGround) {
-    yspd = jspd; // Ensure jump speed is negative to go up
-    onGround = false;
+if (jumpKeyBuffered && jumpCount < jumpMax) {
+    
+	//Reset buffer
+	jumpKeyBuffered = false;
+	jumpKeyBufferTimer = 0;
+	
+	//Increased number of jumps
+	jumpCount++;
+	
+	yspd = jspd; // Ensure jump speed is negative to go up
 }
 
 // Check for Y-axis collision before moving
