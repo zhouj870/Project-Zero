@@ -9,11 +9,15 @@ if (instance_exists(other) && other.object_index == obj_player) {
         if (other.invincible_timer <= 0) { // Prevents rapid hits
             other.health -= damage; 
             other.invincible_timer = 75; //  75 frames (1.25 sec) of invincibility
-
+			
             show_debug_message("Enemy " + string(id) + " hit the player! New Health: " + string(other.health));
 
             //  Apply enemy attack cooldown
             attack_cooldown = attack_delay;
+			 if (other.health <= 0) {
+                show_debug_message(" Player has died. Destroying obj_player...");
+                instance_destroy(other.id); // Destroy the player instance
+            }
         } else {
             show_debug_message(" Player is invincible, no damage applied.");
         }
