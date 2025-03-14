@@ -15,12 +15,12 @@ if (player != noone && instance_exists(player)) {
 
         // Move horizontally if no wall
         if (!place_meeting(x + _hor * move_speed, y, obj_wall)) {
-            x += _hor * move_speed * 0.5; 
+            x += _hor * move_speed * 0.3; 
         }
 
         // Move vertically if no wall
         if (!place_meeting(x, y + _ver * move_speed, obj_wall)) {
-            y += _ver * move_speed * 0.5; 
+            y += _ver * move_speed * 0.3; 
         }
 
         
