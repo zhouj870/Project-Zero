@@ -1,3 +1,8 @@
+  if (attack_cooldown > 0) {
+        attack_cooldown -= 1;
+    }
+
+
 // Find the nearest player 
 var player = instance_nearest(x, y, obj_player);
 
@@ -15,20 +20,18 @@ if (player != noone && instance_exists(player)) {
 
         // Move horizontally if no wall
         if (!place_meeting(x + _hor * move_speed, y, obj_wall)) {
-            x += _hor * move_speed * 0.3; 
+            x += _hor * move_speed * 0.25; 
         }
 
         // Move vertically if no wall
         if (!place_meeting(x, y + _ver * move_speed, obj_wall)) {
-            y += _ver * move_speed * 0.3; 
+            y += _ver * move_speed * 0.25; 
         }
 
         
 
     //Reduce attack cooldown timer
-    if (attack_cooldown > 0) {
-        attack_cooldown -= 1;
-    }
+  
 
     // ATTACK: If close enough, attack when cooldown is ready
     if (distance_to_player < attack_range && attack_cooldown <= 0) {
