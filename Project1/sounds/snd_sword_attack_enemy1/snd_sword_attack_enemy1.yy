@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"cave_theme",
+  "%Name":"snd_sword_attack_enemy1",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":102.4,
-  "name":"cave_theme",
+  "duration":1.056,
+  "name":"snd_sword_attack_enemy1",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"cave_theme.ogg",
+  "soundFile":"snd_sword_attack_enemy1.mp3",
   "type":0,
   "volume":1.0,
 }

@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"jumping_on_gravel",
+  "%Name":"snd_snake_hiss",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.272,
-  "name":"jumping_on_gravel",
+  "duration":2.977937,
+  "name":"snd_snake_hiss",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"jumping_on_gravel.mp3",
+  "soundFile":"snd_snake_hiss.mp3",
   "type":0,
   "volume":1.0,
 }

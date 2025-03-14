@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snake_hiss",
+  "%Name":"snd_door_open",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.977937,
-  "name":"snake_hiss",
+  "duration":1.68,
+  "name":"snd_door_open",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snake_hiss.mp3",
+  "soundFile":"snd_door_open.mp3",
   "type":0,
   "volume":1.0,
 }
