@@ -80,6 +80,7 @@
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"spr_run","path":"sprites/spr_run/spr_run.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
+    {"id":{"name":"Sprite18","path":"sprites/Sprite18/Sprite18.yy",},},
     {"id":{"name":"dungeon_tile_four","path":"tilesets/dungeon_tile_four/dungeon_tile_four.yy",},},
     {"id":{"name":"dungeon_tile_one","path":"tilesets/dungeon_tile_one/dungeon_tile_one.yy",},},
     {"id":{"name":"dungeon_tile_three","path":"tilesets/dungeon_tile_three/dungeon_tile_three.yy",},},
