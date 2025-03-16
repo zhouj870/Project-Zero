@@ -16,10 +16,10 @@ if acceptKey {
 		case 0:
 			room_goto_next();
 		break;
-	
+			
 		// controls help
 		case 1:
-	       
+	       show_message("Controls: Use Arrow Keys to Navigate, Enter to Select.");
 		break;
 	
 		//Quit Game
