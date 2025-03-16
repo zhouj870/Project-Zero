@@ -1,8 +1,8 @@
-width = 128;
-height = 208;
+width = 1280;
+height = 720;
 
-op_border = 8;
-op_space = 16;
+op_border = 64;
+op_space = 128;
 
 pos = 0;
 
