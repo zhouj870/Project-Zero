@@ -19,7 +19,7 @@ if acceptKey {
 	
 		// controls help
 		case 1:
-	
+	       
 		break;
 	
 		//Quit Game
