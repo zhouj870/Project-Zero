@@ -12,3 +12,4 @@ options[2] = "Quit";
 
 op_length = array_length(options);
 
+audio_play_sound(snd_cave_theme, 1, false); 

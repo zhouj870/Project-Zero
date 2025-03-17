@@ -1,6 +1,7 @@
 show_debug_message(" Collision detected with " + object_get_name(other.object_index) + " (ID: " + string(other.object_index) + ")");
 
 if (instance_exists(other) && other.object_index == obj_player) {  
+	
     show_debug_message(" Collision confirmed with obj_player!");
 
     if (!is_undefined(other.health)) {  // Ensure `health` exists before modifying it
@@ -11,7 +12,8 @@ if (instance_exists(other) && other.object_index == obj_player) {
             other.invincible_timer = 75; //  75 frames (1.25 sec) of invincibility
 			
             show_debug_message("Enemy " + string(id) + " hit the player! New Health: " + string(other.health));
-
+			
+			audio_play_sound(snd_sword_attack_enemy1, 1, false); 
             //  Apply enemy attack cooldown
             attack_cooldown = attack_delay;
 			 if (other.health <= 0) {
