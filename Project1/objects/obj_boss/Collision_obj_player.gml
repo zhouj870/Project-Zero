@@ -9,3 +9,6 @@ if (other.invincible_timer <= 0) {
 	
 	
 }
+if(other.health<0){
+    instance_destroy(other);
+}
