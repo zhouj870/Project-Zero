@@ -1,20 +1,71 @@
-var _hor = target_x - x;
-var _ver = target_y - y;
+// Reduce attack cooldown timer
+if (attack_cooldown > 0) {
+    attack_cooldown -= 1;
+}
 
-// Calculate the distance to the target
-var dist = point_distance(x, y, target_x, target_y);
+// Ensure the enemy stays on the ground
+if (!place_meeting(x, y + 1, obj_wall)) {
+    y += 3; // Gravity effect to keep the enemy on the ground
+}
 
-// Avoid division by zero by checking if the distance is greater than a small threshold
-if (dist > 0) {
-    // Normalize the direction vector
-    _hor /= dist;
-    _ver /= dist;
+// FIND THE NEAREST PLAYER PROPERLY
+var closest_player = noone;
+var closest_distance = 999999;
+
+// Loop through all players to find the nearest one
+var i;
+for (i = 0; i < instance_number(obj_player); i++) {
+    var temp_player = instance_find(obj_player, i);
+    
+    if (instance_exists(temp_player)) { //  Ensure player instance exists
+        var dist = point_distance(x, y, temp_player.x, temp_player.y);
+        
+        if (dist < closest_distance) {
+            closest_distance = dist;
+            closest_player = temp_player;
+        }
+    }
+}
+
+//  Debug Message to Check if a Player is Found
+if (closest_player == noone) {
+    show_debug_message(" ERROR: Enemy " + string(id) + " could not find a valid player!");
 } else {
-    // If the distance is zero, just set the movement vector to zero
-    _hor = 0;
-    _ver = 0;
+    show_debug_message(" Enemy " + string(id) + " found player at distance: " + string(closest_distance));
 }
 
-if (!place_meeting(x + _hor * move_speed, y + _ver * move_speed, obj_wall)) {
-    move_and_collide(_hor * move_speed, _ver * move_speed, [obj_wall, enemy_controller]);
+// CHECK IF PLAYER EXISTS & IS WITHIN CHASE RANGE
+if (instance_exists(closest_player) && closest_player.object_index == obj_player) {
+    var distance_to_player = point_distance(x, y, closest_player.x, closest_player.y);
+    var chase_range = 350;  // detection range
+    var stop_distance = 40; //  to ensure enemies can attack properly
+
+    // MOVEMENT
+    if (distance_to_player < chase_range && distance_to_player > stop_distance) {
+        var _hor = sign(closest_player.x - x); // Move left or right
+
+        // Jump Over Small Obstacles 
+        if (place_meeting(x + _hor * move_speed, y, obj_wall) &&
+            !place_meeting(x + _hor * move_speed, y - 10, obj_wall)) {  
+            y -= 10; 
+            show_debug_message("Enemy " + string(id) + " jumped over a small obstacle!");
+        }
+
+        //  Move only if there's NO wall ahead and the enemy will NOT walk off a ledge
+        if (!place_meeting(x + _hor * move_speed, y, obj_wall) &&
+            place_meeting(x + _hor * move_speed, y + 1, obj_wall) &&  // Ground check
+            place_meeting(x + _hor * move_speed, y + 10, obj_wall)) {  //  Ensure there is ground ahead
+
+            x += _hor * move_speed * 0.3;
+			sprite_index = spr_boss_walk;
+            show_debug_message("Enemy " + string(id) + " is MOVING! New X: " + string(x) + " New Distance: " + string(distance_to_player));
+        } else {
+			sprite_index = spr_boss_idle;
+            show_debug_message("Enemy " + string(id) + " is blocked! Wall or no ground ahead.");
+        }
+    } else {
+		sprite_index = spr_boss_idle;
+        show_debug_message("Enemy " + string(id) + " is too far to chase. Distance: " + string(distance_to_player));
+    }
 }
+   

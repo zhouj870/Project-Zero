@@ -13,5 +13,5 @@ if (instance_exists(other)) {
     }
 
     // Destroy the hitbox after dealing damage
-    other.instance_destroy();
+    instance_destroy(other);
 }

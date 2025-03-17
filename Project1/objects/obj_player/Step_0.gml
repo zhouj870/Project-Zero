@@ -13,10 +13,17 @@ xspd = moveDir * move_speed[runType];
 var _subPixel = 0.5;
 
 // Check for X-axis collision before moving
-if (!place_meeting(x + xspd, y, obj_wall)) {
-    x += xspd;
-} else {
+if (place_meeting(x + xspd, y, obj_wall)) {
+	var _pixelCheck = _subPixel * sign(xspd);
+	while( !place_meeting(x + _pixelCheck, y, obj_wall))
+	{
+		x += _pixelCheck;
+	}
+	
     xspd = 0;
+} else {
+    
+	x += xspd;
 }
 
 // Y Movement
@@ -46,10 +53,11 @@ if (jumpKeyBuffered && jumpCount < jumpMax) {
 }
 
 // Check for Y-axis collision before moving
-if (!place_meeting(x, y + yspd, obj_wall)) {
-    y += yspd;
+if (place_meeting(x, y + yspd, obj_wall)) {
+    
+	 yspd = 0;
 } else {
-    yspd = 0;
+    y += yspd;
 }
 
 // Set if I'm on the ground
@@ -72,7 +80,7 @@ if (keyboard_check_pressed(cheat_invincible_key)) {
 if (cheat_invincible) {
     invincible_timer = 9999999;
 } else {
-    if (invincible_timer > 0) {
+    if (!cheat_invincible && invincible_timer > 0) {
         invincible_timer -= 1;
     }
 }
@@ -108,8 +116,8 @@ if (abs(xspd) >= move_speed[1]) { sprite_index = runSpr; }
 if (xspd == 0) { sprite_index = idleSpr; }
 // In the air
 if (!onGround) { sprite_index = jumpSpr; }
-
 mask_index = idleSpr;
+
 
 if (keyboard_check_pressed(ord("Z")) || mouse_check_button_pressed(mb_left)){
 	if(!is_attacking) {
@@ -134,15 +142,13 @@ if(is_attacking){
 	attack_timer -= 1;
 	if(attack_timer <= 0) {
 		is_attacking = false;
-		sprite_index = spr_player;
 	}
 	
 }
 
 if(health <= 0)
 {
-	instance_create_layer(0,0,"UI_Layer",obj_death);
-	instance_destroy();
+	room.goto(rm_gameover);
 }
 
 

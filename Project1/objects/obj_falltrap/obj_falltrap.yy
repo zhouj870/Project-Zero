@@ -31,7 +31,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_trap_fall",
+    "path":"sprites/spr_trap_fall/spr_trap_fall.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

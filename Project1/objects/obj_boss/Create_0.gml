@@ -1,17 +1,14 @@
-enum States {
-    idle,
-    attack,
-    walk,
-    run
-}
+target_x = x
+target_y = y
 
-state = States.idle;  // Correct enum usage
-
-target_x = x;
-target_y = y;
-
-alarm[0] = 60;  // Start movement update timer
+alarm[0] = 60
+attack_range = 20;
+attack_cooldown = 0;
+attack_delay = 60;
 
 move_speed = 2;
 
-audio_play_sound(snd_boss_theme1, 1, false);
+damage = 10;
+enemy_health = 50;
+face = 1;
+

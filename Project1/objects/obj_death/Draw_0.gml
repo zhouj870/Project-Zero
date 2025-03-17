@@ -1,11 +1,9 @@
-var screen_center_x = display_get_width() / 2;
-var screen_center_y = display_get_height() / 2;
+draw_set_color(c_black);
+draw_rectangle(0, 0, room_width, room_height, false);
 
-// Draw the "YOU DIED" text in the center of the screen
-draw_set_color(c_red);  // Set text color to red
-draw_text(screen_center_x - 100, screen_center_y - 50, "YOU DIED");
-
-
-draw_set_color(c_white);  // Set text color to white for buttons
-draw_text(screen_center_x - 50, screen_center_y + 20, "Press R to Restart");
-draw_text(screen_center_x- 50, screen_center_y + 40, "Press Q to Quit");
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_set_color(c_white);
+draw_text(room_width / 2, room_height / 2 - 40, "GAME OVER");
+draw_text(room_width / 2, room_height / 2, "Press R to Retry");
+draw_text(room_width / 2, room_height / 2 + 40, "Press Q to Quit");

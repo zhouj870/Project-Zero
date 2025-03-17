@@ -17,4 +17,11 @@ if (dist > 0) {
 
 if (!place_meeting(x + _hor * move_speed, y + _ver * move_speed, obj_wall)) {
     move_and_collide(_hor * move_speed, _ver * move_speed, [obj_wall, enemy_controller]);
+} else {
+    // Adjust movement if blocked
+    if (!place_meeting(x + _hor * move_speed, y, obj_wall)) {
+        move_and_collide(_hor * move_speed, 0, [obj_wall, enemy_controller]);
+    } else if (!place_meeting(x, y + _ver * move_speed, obj_wall)) {
+        move_and_collide(0, _ver * move_speed, [obj_wall, enemy_controller]);
+    }
 }

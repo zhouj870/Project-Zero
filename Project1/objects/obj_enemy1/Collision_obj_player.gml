@@ -7,9 +7,10 @@ if (instance_exists(other) && other.object_index == obj_player) {
     if (!is_undefined(other.health)) {  // Ensure `health` exists before modifying it
         show_debug_message("obj_player's health exists. Current Health: " + string(other.health));
 
-        if (other.invincible_timer <= 0) { // Prevents rapid hits
+        if (other.invincible_timer <= 0 && attack_cooldown <= 0) { // Prevents rapid hits
             other.health -= damage; 
             other.invincible_timer = 75; //  75 frames (1.25 sec) of invincibility
+            attack_cooldown = attack_delay; // Prevents spam damage
 			
             show_debug_message("Enemy " + string(id) + " hit the player! New Health: " + string(other.health));
 			
@@ -18,7 +19,7 @@ if (instance_exists(other) && other.object_index == obj_player) {
             attack_cooldown = attack_delay;
 			 if (other.health <= 0) {
                 show_debug_message(" Player has died. Destroying obj_player...");
-                instance_destroy(other.id); // Destroy the player instance
+                room_goto(rm_gameover);  // Destroy the player instance
             }
         } else {
             show_debug_message(" Player is invincible, no damage applied.");
