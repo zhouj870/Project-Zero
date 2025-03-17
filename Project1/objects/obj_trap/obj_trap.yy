@@ -33,7 +33,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_trap",
+    "path":"sprites/spr_trap/spr_trap.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

@@ -27,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_sword",
+    "path":"sprites/spr_sword/spr_sword.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
