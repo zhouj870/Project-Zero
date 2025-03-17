@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_enemy1_idle",
-    "path":"sprites/spr_enemy1_idle/spr_enemy1_idle.yy",
+    "name":"spr_enemy1_attack",
+    "path":"sprites/spr_enemy1_attack/spr_enemy1_attack.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -114,10 +114,10 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"roomId":{"name":"rm_testing","path":"rooms/rm_testing/rm_testing.yy",},},
+    {"roomId":{"name":"rm_boss","path":"rooms/rm_boss/rm_boss.yy",},},
     {"roomId":{"name":"rm_entrance","path":"rooms/rm_entrance/rm_entrance.yy",},},
     {"roomId":{"name":"rm_gameover","path":"rooms/rm_gameover/rm_gameover.yy",},},
     {"roomId":{"name":"rm_win","path":"rooms/rm_win/rm_win.yy",},},
-    {"roomId":{"name":"rm_boss","path":"rooms/rm_boss/rm_boss.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

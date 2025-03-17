@@ -1,7 +1,7 @@
 width = 1280;
 height = 720;
 
-op_border = 64;
+op_border = 128;
 op_space = 128;
 
 pos = 0;
