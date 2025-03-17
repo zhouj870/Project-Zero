@@ -139,4 +139,12 @@ if(is_attacking){
 	
 }
 
+if(health <= 0)
+{
+	instance_create_layer(0,0,"UI_Layer",obj_death);
+	instance_destroy();
+}
+
+
+
 
