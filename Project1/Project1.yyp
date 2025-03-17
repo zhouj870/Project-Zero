@@ -77,6 +77,8 @@
     {"id":{"name":"spr_boss_walk","path":"sprites/spr_boss_walk/spr_boss_walk.yy",},},
     {"id":{"name":"spr_brown","path":"sprites/spr_brown/spr_brown.yy",},},
     {"id":{"name":"spr_button","path":"sprites/spr_button/spr_button.yy",},},
+    {"id":{"name":"spr_door_close","path":"sprites/spr_door_close/spr_door_close.yy",},},
+    {"id":{"name":"spr_door_open","path":"sprites/spr_door_open/spr_door_open.yy",},},
     {"id":{"name":"spr_dungeon_wall_four","path":"sprites/spr_dungeon_wall_four/spr_dungeon_wall_four.yy",},},
     {"id":{"name":"spr_dungeon_wall_one","path":"sprites/spr_dungeon_wall_one/spr_dungeon_wall_one.yy",},},
     {"id":{"name":"spr_dungeon_wall_two","path":"sprites/spr_dungeon_wall_two/spr_dungeon_wall_two.yy",},},

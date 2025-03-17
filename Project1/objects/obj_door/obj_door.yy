@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_maze_door",
-    "path":"sprites/spr_maze_door/spr_maze_door.yy",
+    "name":"spr_door_open",
+    "path":"sprites/spr_door_open/spr_door_open.yy",
   },
   "spriteMaskId":null,
   "visible":true,
