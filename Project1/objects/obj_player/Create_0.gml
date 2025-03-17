@@ -43,6 +43,7 @@ is_attacking = false;
 attack_timer = 0;
 attack_duration = 8;
 attack_damage = 35;
+tile_maps = layer_instance_get_instance("Tiles_Col");
 
 //Cheats
 cheat_invincible = false; 

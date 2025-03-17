@@ -13,6 +13,6 @@ if (falling) {
 }
 
 // If the trap collides with the floor, destroy it
-if (place_meeting(x, y + yspd, obj_wall)) {
+if (place_meeting(x, y + yspd, tile_maps)) {
     instance_destroy();
 }

@@ -4,7 +4,7 @@ if (attack_cooldown > 0) {
 }
 
 // Ensure the enemy stays on the ground
-if (!place_meeting(x, y + 1, obj_wall)) {
+if (!place_meeting(x, y + 1, tile_maps)) {
     y += 3; // Gravity effect to keep the enemy on the ground
 }
 
@@ -45,16 +45,16 @@ if (instance_exists(closest_player) && closest_player.object_index == obj_player
         var _hor = sign(closest_player.x - x); // Move left or right
 
         // Jump Over Small Obstacles 
-        if (place_meeting(x + _hor * move_speed, y, obj_wall) &&
-            !place_meeting(x + _hor * move_speed, y - 10, obj_wall)) {  
+        if (place_meeting(x + _hor * move_speed, y, tile_maps) &&
+            !place_meeting(x + _hor * move_speed, y - 10, tile_maps)) {  
             y -= 10; 
             show_debug_message("Enemy " + string(id) + " jumped over a small obstacle!");
         }
 
         //  Move only if there's NO wall ahead and the enemy will NOT walk off a ledge
-        if (!place_meeting(x + _hor * move_speed, y, obj_wall) &&
-            place_meeting(x + _hor * move_speed, y + 1, obj_wall) &&  // Ground check
-            place_meeting(x + _hor * move_speed, y + 10, obj_wall)) {  //  Ensure there is ground ahead
+        if (!place_meeting(x + _hor * move_speed, y,tile_maps) &&
+            place_meeting(x + _hor * move_speed, y + 1, tile_maps) &&  // Ground check
+            place_meeting(x + _hor * move_speed, y + 10, tile_maps)) {  //  Ensure there is ground ahead
 
             x += _hor * move_speed * 0.3;
             show_debug_message("Enemy " + string(id) + " is MOVING! New X: " + string(x) + " New Distance: " + string(distance_to_player));

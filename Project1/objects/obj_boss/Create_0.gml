@@ -12,3 +12,5 @@ damage = 10;
 enemy_health = 50;
 face = 1;
 
+tile_maps = layer_instance_get_instance("Tiles_Col");
+

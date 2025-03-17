@@ -13,9 +13,9 @@ xspd = moveDir * move_speed[runType];
 var _subPixel = 0.5;
 
 // Check for X-axis collision before moving
-if (place_meeting(x + xspd, y, obj_wall)) {
+if (place_meeting(x + xspd, y, tile_maps)) {
 	var _pixelCheck = _subPixel * sign(xspd);
-	while( !place_meeting(x + _pixelCheck, y, obj_wall))
+	while( !place_meeting(x + _pixelCheck, y, tile_maps))
 	{
 		x += _pixelCheck;
 	}
@@ -53,7 +53,7 @@ if (jumpKeyBuffered && jumpCount < jumpMax) {
 }
 
 // Check for Y-axis collision before moving
-if (place_meeting(x, y + yspd, obj_wall)) {
+if (place_meeting(x, y + yspd, tile_maps)) {
     
 	 yspd = 0;
 } else {
@@ -61,7 +61,7 @@ if (place_meeting(x, y + yspd, obj_wall)) {
 }
 
 // Set if I'm on the ground
-if (place_meeting(x, y + 1, obj_wall)) {
+if (place_meeting(x, y + 1, tile_maps)) {
     onGround = true;
     yspd = 0;
 } else {
