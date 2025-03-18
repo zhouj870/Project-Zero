@@ -12,5 +12,10 @@ damage = 10;
 enemy_health = 50;
 face = 1;
 
-tile_maps = layer_instance_get_instance("Tiles_Col");
-
+if(layer_exists("Tiles_Col")){
+    var tile_layer_id =layer_get_id("Tiles_Col");
+    tile_maps = layer_tilemap_get_id(tile_layer_id);
+}else{
+    show_debug_message("Error: Layer 'Tile_Col' does not exist");
+    tile_maps = noone; //to avoid errors
+}
