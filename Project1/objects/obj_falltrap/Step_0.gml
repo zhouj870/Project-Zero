@@ -21,10 +21,15 @@ if (!falling && player != noone) {
 // Apply gravity only after trap is triggered
 if (falling) {
     yspd = min(yspd + gravity, 8); // Apply gravity but limit max fall speed
-    y += yspd;
-}
 
-// Stop falling when hitting the ground
-if (falling && tile_maps != noone && place_meeting(x, y + yspd, tile_maps)) {
-    instance_destroy();
+    // Check if the object will collide with the ground
+    if (!place_meeting(x, y + yspd, tile_maps)) {
+        y += yspd;
+    } else {
+        // Align with the ground properly and destroy
+        while (!place_meeting(x, y + sign(yspd), tile_maps)) {
+            y += sign(yspd);
+        }
+        instance_destroy();
+    }
 }
