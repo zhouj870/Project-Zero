@@ -19,7 +19,7 @@ if acceptKey {
 			
 		// controls help
 		case 1:
-	       show_message("Controls: Use Arrow Keys to Navigate, Enter to Select.");
+	       show_message("Controls: Use Arrow Keys to Navigate, Enter to Select.\nUse either arrow keys or WASD keys to move. In order to jump pressed the spacebar. Pressing the spacebar again would allow you to double jump.\nTo attack press the Z button and character will attack");
 		break;
 	
 		//Quit Game
