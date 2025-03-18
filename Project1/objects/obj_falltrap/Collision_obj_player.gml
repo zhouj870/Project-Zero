@@ -6,5 +6,6 @@ if (falling) {
         show_debug_message("Falling trap hit player! Player health: " + string(other.health));
     }
 
-    instance_destroy(); // Trap destroyed after hitting player
+    // Destroy the trap after hitting the player
+    instance_destroy();
 }

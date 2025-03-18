@@ -1,18 +1,30 @@
 // Find the nearest player
 var player = instance_nearest(x, y, obj_player);
 
-// If the player exists and is directly below the trap
-if (!falling && player != noone && abs(player.x - x) < 20 && player.y > y) {
-    falling = true;  // Start falling
+// Ensure tile_maps is valid before using it
+if (!variable_instance_exists(id, "tile_maps") || tile_maps == noone) {
+    show_debug_message("ERROR: tile_maps is not initialized properly!");
 }
 
-// If the trap is falling, apply gravity
+// Define the trigger range
+var trigger_x_range = 20;  // Horizontal distance to trigger fall
+var trigger_y_threshold = 10; // Player must be at least this far below the spikes
+
+// Ensure the trap does not fall instantly
+if (!falling && player != noone) {
+    if (abs(player.x - x) < trigger_x_range && player.y > y + trigger_y_threshold) {
+        falling = true;  
+        show_debug_message("Trap triggered! Player detected below.");
+    }
+}
+
+// Apply gravity only after trap is triggered
 if (falling) {
-    yspd += gravity; // Increase speed over time
-    y += yspd;       // Move the trap downward
+    yspd = min(yspd + gravity, 8); // Apply gravity but limit max fall speed
+    y += yspd;
 }
 
-// If the trap collides with the floor, destroy it
-if (place_meeting(x, y + yspd, tile_maps)) {
+// Stop falling when hitting the ground
+if (falling && tile_maps != noone && place_meeting(x, y + yspd, tile_maps)) {
     instance_destroy();
 }
